@@ -1,0 +1,86 @@
+.clay-color-picker {
+  position: relative; }
+  .clay-color-picker button.active {
+    background: #f1f2f5; }
+  .clay-color-picker label {
+    color: #6b6c7e;
+    font-size: 14px; }
+  .clay-color-picker > .input-group {
+    max-width: 157px; }
+    .clay-color-picker > .input-group .input-group-text {
+      padding: 0; }
+  .clay-color-picker .hex-info {
+    margin-top: 20px; }
+  .clay-color-picker .hue-selector {
+    background: linear-gradient(270deg, #fc0d1b 0%, #fc22d6 18.23%, #1824fb 34.25%, #2bf6fd 50.28%, #2bfd2e 67.58%, #fcfd37 81.22%, #fc121b 100%);
+    border-radius: 4px;
+    margin: 4px;
+    height: 8px;
+    position: relative; }
+    .clay-color-picker .hue-selector .pointer {
+      top: -50%;
+      border: 2px solid #fff;
+      height: 14px;
+      border-radius: 50%;
+      width: 14px;
+      position: absolute; }
+  .clay-color-picker .gradient-info {
+    display: flex;
+    margin: 20px 0; }
+  .clay-color-picker .gradient-selector {
+    position: relative;
+    width: 144px;
+    height: 128px; }
+    .clay-color-picker .gradient-selector .dark-gradient,
+    .clay-color-picker .gradient-selector .light-gradient {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; }
+    .clay-color-picker .gradient-selector .dark-gradient {
+      background: linear-gradient(to top, #000, rgba(0, 0, 0, 0)); }
+    .clay-color-picker .gradient-selector .light-gradient {
+      background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0)); }
+    .clay-color-picker .gradient-selector .pointer {
+      border-radius: 50%;
+      border: 2px solid #fff;
+      height: 14px;
+      position: absolute;
+      width: 14px; }
+  .clay-color-picker .label-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 0; }
+    .clay-color-picker .label-container:first-child {
+      margin-top: 0; }
+  .clay-color-picker .picker-overlay {
+    background: #ffffff;
+    box-shadow: 0px 4px 8px rgba(39, 40, 51, 0.12);
+    display: inline-block;
+    padding: 24px;
+    position: absolute;
+    border-radius: 4px;
+    z-index: 5000; }
+  .clay-color-picker .rgb-info {
+    margin-left: 16px;
+    margin-bottom: 16px; }
+    .clay-color-picker .rgb-info .input-group-prepend .input-group-text {
+      font-size: 14px;
+      height: 32px;
+      line-height: 25px;
+      min-width: 24px;
+      padding: 8px; }
+    .clay-color-picker .rgb-info input {
+      font-size: 14px;
+      height: 32px;
+      padding: 8px;
+      width: 60px; }
+  .clay-color-picker .splotch {
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0; }
+  .clay-color-picker .splotch-grid {
+    grid-gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(6, 24px); }
