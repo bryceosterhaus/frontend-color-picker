@@ -77,7 +77,8 @@ function ColorPicker({
 	onValueChange,
 	value
 }) {
-	const containerRef = useRef(null);
+	const overlayRef = useRef(null);
+	const splotchRef = useRef(null);
 	const inputRef = useRef(null);
 	const [active, setActive] = useState(false);
 	const [inputValue, setInputValue] = useState(value.substring(1, 7));
@@ -100,8 +101,10 @@ function ColorPicker({
 	useEffect(() => {
 		const handleClick = event => {
 			if (
-				containerRef.current &&
-				!containerRef.current.contains(event.target)
+				overlayRef.current &&
+				!overlayRef.current.contains(event.target) &&
+				splotchRef.current &&
+				!splotchRef.current.contains(event.target) 
 			) {
 				setActive(false);
 			}
@@ -122,14 +125,14 @@ function ColorPicker({
 	}, []);
 
 	return (
-		<div className="clay-color-picker" ref={containerRef}>
+		<div className="clay-color-picker">
 			<div className="input-group">
 				<div
 					className={`input-group-item input-group-item-shrink${
 						allowAny || onColorsChange ? ' input-group-prepend' : ''
 					}`}
 				>
-					<span className="input-group-text input-group-text-secondary">
+					<span className="input-group-text input-group-text-secondary" ref={splotchRef}>
 						<div className="open-control open-checkbox">
 							<Splotch
 								aria-label={ariaLabels.selectColor}
@@ -186,7 +189,7 @@ function ColorPicker({
 			</div>
 
 			{active && (
-				<div className="picker-overlay">
+				<div className="picker-overlay" ref={overlayRef}>
 					{!onColorsChange && (
 						<Basic
 							colors={colors || DEFAULT_COLORS}
